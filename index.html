@@ -4,69 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Danret Fashions</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-
-
 </head>
 <body>
     <header>
-        <a href="" class="logo">Danret Fashion and jeweraly<span>.</span></a>
+        <a href="" class="logo">Danret<span>.</span></a>
         <form action="">
-            <input type="search" id="search-bar">
+            <input type="search" id="search-bar" onsearch="myFunction()">
+            
             <label for="search-bar" class="fas fa-search"></label>
         </form>
+
 
         <div class="icons">
             <div id="menu-bar" class="fas fa-bars"></div>
              <div id="theme-toggler" class="fas fa-moon"></div>
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a> 
-         <!--    <a href="#" class="fas fa- fa-user"></a> -->
+             <a href="#" class="fas fa- fa-user"></a> 
         </div>
 
     </header>
+    <div class="banner" id="home">
+        <div class="banner-text">
+            <h2>Danret stores</h2>
+            <p>Fashion, Electronics and Jewelery in Kenya</p>
+            <a href="#">Learn More</a>
+        </div>
+    </div>
+    <div id="full-section">
+
+    <div id="container1">
+        <ul id="items">
+            
+
+            </li>
+        </ul>
+    </div>
+    <div id="container2">
+            <div id="category"></div>
+            <h3><li id="currentItems"></li></h3>
+            <img id="item-pic"
+                src="https://cdn.pixabay.com/photo/2016/11/29/03/07/crown-1866986_960_720.jpg" 
+                alt="">
+            <div id="description"></div>
+            <div id="items-counter"></div>
+            <div id="items-remaining"></div>
+
+        <button id="buy-items">Buy items</button>
+
+    </div>
+   
+    <!-- <div id="properties">
+   
+    <div id="rating">
+        <div id="rate"></div>
+        <div id="count"></div>
+    </div>
+    <div id="items-counter"></div> 
+    </div> -->
+
+
+</div>
+
+<div class="contact" id="contact">
+    <div class="section-header">
+        <h2>Contact us</h2>
+        <p id="catch1">We are always ensure that you achieve your dream home that accomodates all your needs and family </p>
+    </div>
     
-    <div class="row">
-        <div class="column">
-            <div id="items-menu">
-                <h2>Items</h2>
-                <ul id="items">
-                  <li class="item" placeholder="li"></li>
-                </ul>
-              </div>
+    <div class="single-contact">
+        <form action="http://localhost:3000/items" id="info-form">
+            <label for="email">
+                <strong>mail:</strong>
+        <input id="email" type="mail" placeholder="Email">
+            </label>
+            <label for="last-name">
+                password:
+        <input id="psd" type="password" placeholder="Password">
+            </label>
+      <!--   <textarea id="wrd" cols="30" rows="10" placeholder="Query"></textarea> -->
+        <input type="submit" value="Create new keys">
+    </form>
+    </div>
+</div>
 
-
-        </div>
-        <div class="column">
-            <div id="items-on-sale">
-                <h3 id="category" class="category">Category</h3>
-                <img
-                  id="items-image"
-                  src=""
-                  alt="image"
-                />
-                
-              </div>
-        </div>
-        <div class="column">
-            <h2 id="moreinfo">Hurry up &#9977;. Grab your ticket</h2>
-            <section>
-               <div id="description" class="desciption">Description</div>
-                <div id="price" class="price">Price</div>
-                <div id="rating" class="rating">Ratings
-                    <div id="rate" class="rate">Rate</div>
-                    <div id="count" class="count">count</div>
-                </div>
-                <div id="items-counter"></div>
-                <div id="items-rmn">Items remaining</div>
-              </section>
-              <button id="buy-items">Buy Items</button>
-              <script type="text/javascript" src="./indexxx.js"></script
-                  
-        </div>
-      </div>
+<div >
+    <ul id="footer">
+        <li class="lf"><a href="#lct">Location</a></li>
+        <li class="lf"><a href="#about">About</a></li>
+        <li class="lf"><a href="#service">Services</a></li>
+        <li class="lf"><a href="#contact">Contact</a></li>
+    </ul>        
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
+    <script src="./index.js"></script>
 </body>
 </html>
