@@ -32,7 +32,7 @@ fetch(URL)
             const rating = document.getElementById("rating");
             rating.textContent = items.rating;
             const rate = document.getElementById("rate");
-            rate.textContent = items.rating.rate
+            rate.textContent = items.rate
             const count = document.querySelector("div#items-counter");
             count.textContent = items.count - items.count_sold;
             
@@ -46,7 +46,7 @@ function allItems() {
     fetch(URL)
     .then((response) => response.json())
     .then ((data) => {
-        document.querySelector("tems").textContent = data.title
+        document.querySelector("items").textContent = data.title
         document.querySelector("#description").textContent =
         data.description
         document.querySelector("#item-pic").setAttribute("src", `${data.image}`)
@@ -108,3 +108,4 @@ while (i === electronics.length) {
     console.log(scores[i]);
     i++;
 } */ 
+// function getCards ()
