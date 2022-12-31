@@ -192,6 +192,22 @@ ul li:hover{
 
 }
 
+.button-like {
+    display: flex;
+    float: left;
+    height: 2rem;
+    width: 2rem;
+    font-size: .7rem;
+    line-height: 2rem;
+    background: var(--black-color);
+    color: var(--white-color);
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 1.5rem;
+  
+}
+
 #category {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -253,15 +269,17 @@ img{
 	padding: 60px 0;
 }
 h2{
-    font-size: 2rem;
+    font-size: 5rem;
     color: var(--black-color);
+    text-align: center;
+    text-shadow: #fff;
 
 }
 
 #catch1 {
     font-size: 2rem;
     font-family: "Roboto", sans-serif;
-    color: var(--orange);
+    color: var(--white-color);
     text-align: center;
     padding-top: .7rem;
     padding-bottom: 1rem;
@@ -326,7 +344,7 @@ h2{
 
 }
 #sales{
-    background-color: rgb(139, 50, 50);
+    background-color: rgb(219, 96, 96);
     display: block;
     padding: 1rem;
     width: 45%;
@@ -353,15 +371,92 @@ h3 {
     height: 600px;
     float: right;
     padding-left: 2px;
+}
 
-   
-    
+#comments{
+    width: 100%;
+    height: fit-content;
+    background-color: var(--orange);
+
+    border-radius: 2rem;
+}
+#comment-box, #post {
+    border: none;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    color: var(--black-color);
+    width: 100%;
+    height: 50px;
+    background: var(--white-color);
+    font-size: 1.7rem;
+     padding: 0 2rem;
+     text-transform: none;
+}
+#post{
+    border: none;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    color: var(--black-color);
+    width: 100%;
+    height: 30px;
+    background-color: green;
+    font-size: 1.7rem;
+    color: var(--white-color);
+     padding: 0 2rem;
+     text-transform: none;
+}
+
+#post:hover{
+    background-color: deeppink;
     
 }
+
+
+.single-contact {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 65%;
+        justify-content: center;
+        align-items: center;
+    }
+.contact {
+        padding-top: 2rem;
+        text-align: center;
+    }
+#catch2 {
+    font-size: 2rem;
+    color: var(--orange);
+}
+.single-contact input {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 3px solid #ddd;
+    }
+.single-contact textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 3px solid #ddd;
+    }
+.single-contact a {
+    text-decoration: none;
+    background: orangered;
+    color: #fff;
+        display: inline-block;
+        padding: 15px 25px;
+        margin-top: 25px;
+        border-radius: 50px;
+        text-transform: uppercase;
+    }
+    
+    
+
 #about-us {
     display: flex;
     width: 100%;
-    background-color: darkmagenta;
+    background-color: rgb(219, 96, 96);
     height: 200px;
     margin-top: 5rem;
 }
