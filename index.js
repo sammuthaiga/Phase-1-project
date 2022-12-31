@@ -30,12 +30,16 @@ fetch(URL)
             category.textContent = items.category;
             const description = document.getElementById("description");
             description.textContent = items.description;
-            // const rating = document.getElementById("rating");
-            // rating.textContent = items.rating;
             const rate = document.getElementById("rate");
             rate.textContent = items.rate
-            const count = document.getElementById("count");
-            count.textContent = items.count
+            // const count = document.getElementById("count");
+            // count.textContent = items.count - items_sold
+
+               const count = document.querySelector("div#items-counter");
+         count.textContent = items.count - items.count_sold
+        
+         document.querySelector("ul#items").appendChild(li)
+ 
             
         })
         document.querySelector("ul#items").appendChild(li)
@@ -54,11 +58,13 @@ function allItems() {
         document.querySelector("#category").textContent = data.category
         document.querySelector("#rating").textContent = data.rating
         document.querySelector("#rate").textContent = data.rate
-        document.querySelector("#count").innerHTML = data.count - data.count_sold
+        document.querySelector("#count").innerHTML = data.count 
         document.querySelector("ul#items").firstElementChild.remove()
 
-         document.querySelector("div#items-counter").textcontent = data.count - data.count_sold
+         //document.querySelector("div#count").textcontent = data.count - data.count_sold
 
+         document.querySelector("div#items-counter").textContent = data.count - data.items_sold
+       
         
     })
 }
@@ -67,7 +73,7 @@ allItems()
 function buyItem() {
     const button =document.querySelector("button#buy-items")
     button.addEventListener("click", function(){
-        const currentLi = document.querySelector("div#items-counter")
+        const currentLi = document.querySelector("div#count")
         const number = parseInt(currentLi.textContent)
 
         if(number >=1){
@@ -118,6 +124,17 @@ buyItem()
 
     })
 
+
+    let post= document.getElementById("post");
+    post.addEventListener("click", function(){
+        let commentBoxValue= document.getElementById("comment-box").value;
+     
+        let li = document.createElement("li");
+        let text = document.createTextNode(commentBoxValue);
+        li.appendChild(text);
+        document.getElementById("unordered").appendChild(li);
+     
+    });
 
 
 /* const infoForm = document.getElementById("info-form");
