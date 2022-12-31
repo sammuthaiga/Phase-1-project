@@ -5,10 +5,6 @@
        $(".header").removeClass("active");
     }
 });
-
-
-
-
 const URL = "http://localhost:3000/items";
 
 function fetchItems() {
@@ -32,15 +28,9 @@ fetch(URL)
             description.textContent = items.description;
             const rate = document.getElementById("rate");
             rate.textContent = items.rate
-            // const count = document.getElementById("count");
-            // count.textContent = items.count - items_sold
-
                const count = document.querySelector("div#items-counter");
-         count.textContent = items.count - items.count_sold
-        
-         document.querySelector("ul#items").appendChild(li)
- 
-            
+         count.textContent = items.count - items.count_sold   
+         document.querySelector("ul#items").appendChild(li)      
         })
         document.querySelector("ul#items").appendChild(li)
     });
@@ -51,25 +41,18 @@ function allItems() {
     fetch(URL)
     .then((response) => response.json())
     .then ((data) => {
-        document.querySelector("items").textContent = data.title
+        document.querySelector("title").textContent = data.title
         document.querySelector("#description").textContent =
         data.description
         document.querySelector("#item-pic").setAttribute("src", `${data.image}`)
         document.querySelector("#category").textContent = data.category
-        document.querySelector("#rating").textContent = data.rating
         document.querySelector("#rate").textContent = data.rate
         document.querySelector("#count").innerHTML = data.count 
         document.querySelector("ul#items").firstElementChild.remove()
-
-         //document.querySelector("div#count").textcontent = data.count - data.count_sold
-
-         document.querySelector("div#items-counter").textContent = data.count - data.items_sold
-       
-        
+         document.querySelector("div#items-counter").textContent = data.count - data.items_sold  
     })
 }
 allItems()
-
 function buyItem() {
     const button =document.querySelector("button#buy-items")
     button.addEventListener("click", function(){
@@ -84,47 +67,26 @@ function buyItem() {
     })
 }
 buyItem()
-
-
-
-     const form = document.getElementById("forPost");
-     form.addEventListener('submit', function (e){
-         e.preventDefault()
-        
+     const formEl = document.querySelector("#forPost");
+     formEl.addEventListener('submit', event =>{
+         event.preventDefault();
+         const formData = new FormData(formEl);
+         const data = Object.fromEntries(formData);
+         console.log(data)     
     fetch(URL, {
         method:'POST',
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.stringify({
-            title : "men's shoes",
-            price : "65",
-            description : "black leather",
-            category : "men's clothing",
-            image : "",
-            rate : "6",
-            count : "29"
-            
-        })
+        body: JSON.stringify(data)
     }).then(response => {
         return response.json
     }).then((data) => {
-        
-            
-          /*   document.querySelector("#forPost").textContent = data.form */
-
-            data.title = document.getElementById('#title').value
-            data.price = document.getElementById('#price').value
-            data.description = document.getElementById('#category').value
-            data.image = document.getElementById('#image-url').value
-            data.rate = document.getElementById('#rate').value
-            data.count = document.getElementById('#count').value  
+            console.log(data)
         }) 
-        .catch(error => console.log(error ))
+     .catch(error => console.log(error ))
 
     })
-
-
     let post= document.getElementById("post");
     post.addEventListener("click", function(){
         let commentBoxValue= document.getElementById("comment-box").value;
