@@ -1,4 +1,4 @@
-$(window).on("scroll", function() {
+ $(window).on("scroll", function() {
     if($(window).scrollTop() > 50) {
         $(".header").addClass("active");
     } else {                
@@ -9,8 +9,9 @@ $(window).on("scroll", function() {
 
 
 
-const URL = "  http://localhost:3000/items";
- function fetchItems() {
+const URL = "http://localhost:3000/items";
+
+function fetchItems() {
 fetch(URL)
 .then((response) => response.json())
 .then((data) => {
@@ -29,12 +30,12 @@ fetch(URL)
             category.textContent = items.category;
             const description = document.getElementById("description");
             description.textContent = items.description;
-            const rating = document.getElementById("rating");
-            rating.textContent = items.rating;
+            // const rating = document.getElementById("rating");
+            // rating.textContent = items.rating;
             const rate = document.getElementById("rate");
             rate.textContent = items.rate
-            const count = document.querySelector("div#items-counter");
-            count.textContent = items.count - items.count_sold;
+            const count = document.getElementById("count");
+            count.textContent = items.count
             
         })
         document.querySelector("ul#items").appendChild(li)
@@ -56,7 +57,7 @@ function allItems() {
         document.querySelector("#count").innerHTML = data.count - data.count_sold
         document.querySelector("ul#items").firstElementChild.remove()
 
-        document.querySelector("div#items-counter").textcontent = data.count - data.count_sold
+         document.querySelector("div#items-counter").textcontent = data.count - data.count_sold
 
         
     })
@@ -77,6 +78,47 @@ function buyItem() {
     })
 }
 buyItem()
+
+
+
+     const form = document.getElementById("forPost");
+     form.addEventListener('submit', function (e){
+         e.preventDefault()
+        
+    fetch(URL, {
+        method:'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({
+            title : "men's shoes",
+            price : "65",
+            description : "black leather",
+            category : "men's clothing",
+            image : "",
+            rate : "6",
+            count : "29"
+            
+        })
+    }).then(response => {
+        return response.json
+    }).then((data) => {
+        
+            
+          /*   document.querySelector("#forPost").textContent = data.form */
+
+            data.title = document.getElementById('#title').value
+            data.price = document.getElementById('#price').value
+            data.description = document.getElementById('#category').value
+            data.image = document.getElementById('#image-url').value
+            data.rate = document.getElementById('#rate').value
+            data.count = document.getElementById('#count').value  
+        }) 
+        .catch(error => console.log(error ))
+
+    })
+
+
 
 /* const infoForm = document.getElementById("info-form");
 infoForm.addEventListener("submit", handleFormSubmit);
