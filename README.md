@@ -6,6 +6,7 @@
 
 Danret is a platform designed to sort out the problem of E-Commerce. Danret offers the user the best experience when
 it comes to matters buying and selling.
+<p>Users can access Danret from all devices available from any location at any time.</p>
 
 ### At Danret a user can be able to:
 <ul>
