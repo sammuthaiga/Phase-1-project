@@ -51,10 +51,11 @@
             <img id="item-pic"
                 src="https://cdn.pixabay.com/photo/2016/11/29/03/07/crown-1866986_960_720.jpg" 
                 alt="">
+                <div id="price"><p>price</p></div>
             <div id="description"></div>
             <div id="items-counter"></div>
             <div id="items-remaining"></div>
-            <h3>Ratings</h3>
+            
             
             <div id="rate">rate</div>
             <div id="count">count</div>
@@ -76,15 +77,15 @@
 <div id="sales">
 <h3>Market Your Products. Make Money Now!</h2>
         <p id="catch1">We are always here to ensure you don't only spend but get the chance to make some cash.</p>
-    <form id="forPost"    method="POST">
+    <form id="forPost"  action="  http://localhost:3000/items"  method="POST">
         <ul>
             <li><input type="text" name="title" placeholder="Title"/></li>
-            <li><input type="number" number="price" placeholder="Price" /></li>
+            <li><input type="number" name="price" placeholder="Price" /></li>
             <li><input type="text" name="description" placeholder="Description"/></li>
             <li><input type="text" name="category"  placeholder="Category"/></li>
-            <li><input type="url" img="image-url"  placeholder="Image - url"/></li>
-            <li><input type="number" number="rate" placeholder="rate"/></li>
-            <li><input type="number" number="count" placeholder="count"/></li>
+            <li><input type="img" name="image"  placeholder="Image - url"/></li>
+            <li><input type="number" name="rate" placeholder="rate"/></li>
+            <li><input type="number" name="count" placeholder="count"/></li>
     </ul>
         <input type="submit" value="submit"  placeholder="Submit"/>
     </form> 
