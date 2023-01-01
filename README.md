@@ -32,7 +32,7 @@ more content and functionallities</p>
 <li>User reset password page</li>
 <li>User settings page</li>
 </ul>
-### Structure
+<h2>Structure</h2>
 
 The structure of this app looks like:
 
