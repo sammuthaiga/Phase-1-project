@@ -22,14 +22,17 @@ fetch(URL)
             title.textContent = items.title;
             const img = document.getElementById("item-pic");
             img.src = items.image;
+            const price = document.getElementById("price");
+            price.textContent = items.price
             const category = document.getElementById("category");
             category.textContent = items.category;
             const description = document.getElementById("description");
             description.textContent = items.description;
             const rate = document.getElementById("rate");
             rate.textContent = items.rate
-               const count = document.querySelector("div#items-counter");
-         count.textContent = items.count - items.count_sold   
+               const count = document.getElementById("count");
+               count.textContent = items.count
+         //count.textContent = items.count - items.count_sold   
          document.querySelector("ul#items").appendChild(li)      
         })
         document.querySelector("ul#items").appendChild(li)
@@ -45,11 +48,12 @@ function allItems() {
         document.querySelector("#description").textContent =
         data.description
         document.querySelector("#item-pic").setAttribute("src", `${data.image}`)
+        document.querySelector("#price").textContent = data.value
         document.querySelector("#category").textContent = data.category
         document.querySelector("#rate").textContent = data.rate
-        document.querySelector("#count").innerHTML = data.count 
+        document.querySelector("#count").textContent = data.count
         document.querySelector("ul#items").firstElementChild.remove()
-         document.querySelector("div#items-counter").textContent = data.count - data.items_sold  
+         //document.querySelector("div#items-counter").textContent = data.count - data.items_sold  
     })
 }
 allItems()
@@ -67,6 +71,7 @@ function buyItem() {
     })
 }
 buyItem()
+
      const formEl = document.querySelector("#forPost");
      formEl.addEventListener('submit', event =>{
          event.preventDefault();
@@ -87,6 +92,7 @@ buyItem()
      .catch(error => console.log(error ))
 
     })
+
     let post= document.getElementById("post");
     post.addEventListener("click", function(){
         let commentBoxValue= document.getElementById("comment-box").value;
