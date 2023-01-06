@@ -43,5 +43,7 @@ The structure of this app looks like:
 ├── index.js
 ├── styles.css
 ├── db.json
+```
+## <h4>Link</h4>
 <p>To visit Danret website use the following link</p>
-<p></p>https://sammuthaiga.github.io/Phase-1-project/
+<p>https://sammuthaiga.github.io/Phase-1-project/</p>
